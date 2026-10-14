@@ -1,0 +1,47 @@
+## Assignment 4
+
+## Describe your idea for a data analysis final project
+My project will look at community water fluoridation and oral health across the United States. 
+In 2025, Utah became the first state to ban flouride in public dinking water, and Florida followed soon after. 
+That makes this a good to ask whether states where more people drink fluoridated water actually have better dental
+health. 
+
+Main question: Do states with a higher percentage of people on fluridated community water have lower rates of tooth
+loss in adults?
+
+Other questions: 
+- Does the relationship still hold after accounting for income and how often people go to the dentist?
+- Does it differ by region of the country?
+- Where did Utah fall compared to other states before the ban? 
+
+I expect states with more fluoridation to have less adult tooth loss, but I also expect income and dental visits to explain part of that difference. 
+
+Planned analysis:
+- Scatter plots of fluoridation vs tooth loss, colored by region
+- A linear model: pct_teeth_lost 
+pct_fluoridation + pct_dental_visit + median_income 
+- New skill: a U.S. map showing fluoridation and tooth loss by state
+## Also, Describe the sort of data you will use, potential sources, and what the data might look like
+State level public health data. Each row will be one state (50 states plus DC so about 51 rows), could 
+be repeated across a few survey years. 
+
+Potential sources:
+- CDC water fluoridation statistics/ water fluoridation reporting system (percent of each state's population on fluoridated water)
+- CDC oral health data portal, which pulls from the BRFSS survey (tooth loss and dental visits by state)
+- U.S> census bureau american community survey (median household income by state)
+- News coverage of the 2025 Utah and Florida fluoride bans for background
+All public and I will join them together by state (and year).
+
+Example of what data might look like:
+-state: state name 
+-region: Northeast, midwest, south, or west 
+pct_fluoridated: percent of population on community water that receives fluoridated water #0-100
+- median_income: median household income in dollars 
+pct_dental_visit: percent of adults who visited a dentist in the past year
+- pct_teeth_lost: percent of adults 65+ who have lost 6 or more teeth
+
+## (If you already have data, skip this task) Create fake data that simulates what your final project data set might look like. Preferrably a csv file
+I don't have the real data yet, so I made fake data in R (final_project_idea.R) and saved it as fake_fluoride_data.csv. It has 51 rows (50 states + DC) 
+with the columns listed above. The numbers are made up, but I built in the relationship I expect: tooth loss goes down as fluoridation and income go up.
+
+## Generate a plot (using ggplot) using either your real or fake data that shows at least one expected result
