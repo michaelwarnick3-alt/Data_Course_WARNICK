@@ -1,0 +1,16 @@
+state,region,pct_fluoridated,pct_teeth_lost,high_fluoride
+Utah,West,55,38,yes
+Idaho,West,35,43,no
+Colorado,West,70,34,yes
+Arizona,West,55,39,yes
+California,West,60,37,yes
+Oregon,West,25,44,no
+Texas,South,75,40,yes
+Florida,South,75,41,yes
+Georgia,South,95,35,yes
+Ohio,Midwest,90,33,yes
+Illinois,Midwest,98,32,yes
+Minnesota,Midwest,98,30,yes
+New York,Northeast,70,36,yes
+Maine,Northeast,80,35,yes
+New Jersey,Northeast,15,45,no
