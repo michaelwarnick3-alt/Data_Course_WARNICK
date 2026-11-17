@@ -54,8 +54,11 @@ religion_tidy %>%
   group_by(Religion) %>%
   summarise(cor_pop = cor(Pop_2010, Proportion)) %>%
   arrange(desc(cor_pop))
-## Muslim highest (0.76) but mostly because of Salt Lake County
-## LDS has no correlation with population (about 0)
+## Q1: Most religions have only a weak correlation with county population, and LDS has
+## basically none (r = -0.003), so it makes up about the same share in big and small counties.
+## Muslim has the highest correlation (r = 0.76), but that is mostly driven by Salt Lake County alone.
+## Smaller religions like Pentecostal and Assemblies of God tend to show up more in bigger
+## counties, since many small rural counties have 0 of them.
 
 ## Q2: does any religion correlate with non-religious?
 plot4 = religion_tidy %>%
@@ -70,5 +73,8 @@ religion_tidy %>%
   group_by(Religion) %>%
   summarise(cor_nonrel = cor(Non_Religious, Proportion)) %>%
   arrange(cor_nonrel)
-## LDS strong negative (-0.87): more LDS = fewer non-religious
-## Episcopal positive (0.60)
+## Q2: LDS has a strong negative correlation with non-religious people (r = -0.87), so counties
+## with more LDS members have fewer non-religious people. This makes sense because LDS makes up
+## most of the religious population in Utah. Smaller groups like Episcopal (r = 0.60) and
+## Evangelical (r = 0.39) are positively correlated, meaning they are more common in less LDS,
+## more non-religious counties. These are only correlations from 29 counties, so they don't show cause and effect.
