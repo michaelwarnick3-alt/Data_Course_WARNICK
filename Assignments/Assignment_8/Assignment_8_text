@@ -1,0 +1,13 @@
+1. Yes, when I predicted growth at nitrogen = 60, some predictions came out negative, which isn't possible
+for a mushroom. The real data only went up to 45 nitrogen, so the model was guessing outside of its range.
+
+2. Yes, nitrogen wasn't linear. Growth went up until about 25 and then dropped, kind of like a hill. I used poly(Nitrogen, 2)
+to fit a curve, and that was my best model. 
+Resource: http://www.sthda.com/english/articles/40-regression-analysis/162-nonlinear-regression-essentials-in-r-polynomial-and-spline-regression-models/
+
+3. (it wouldn't format in the right way in a txt file so hopefully this is okay)
+nonlin = read_csv("Data/non_linear_relationship.csv")
+ggplot(nonlin, aes(x = predictor, y = response)) + geom_point()
+mod1 = lm(response ~ exp(predictor), data = nonlin)
+mod2 = lm(response ~ poly(predictor, 2), data = nonlin)
+summary(mod1)
